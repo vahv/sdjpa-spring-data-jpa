@@ -10,6 +10,10 @@ import java.util.List;
  */
 public interface AuthorDao {
 
+    default List<Author> findAllAuthorsByLastNameNative(String lastname, Pageable pageable) {
+        return List.of();
+    }
+
     List<Author> findAllAuthorsByLastName(String lastname, Pageable pageable);
 
     Author getById(Long id);
